@@ -11,6 +11,7 @@ public class TestRunner {
 
 	// ADD ANY MORE CLASSES YOU WISH TO TEST HERE
 	classesToTest.add(CarTest.class);
+	classesToTest.add(LocationTest.class);
 	
 	// For all test classes added, loop through and use JUnit
 	// to run them.
