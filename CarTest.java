@@ -22,6 +22,16 @@ public class CarTest {
 	}
 	
 	@Test
+	//Tests the updateLocation() method changes the Location
+	public void TestCarUpdate() {
+		Location oldLoc = Mockito.mock(Location.class);
+		Car c = new Car(1,oldLoc);
+		Location newLoc = Mockito.mock(Location.class);
+		c.updateLocation(newLoc);
+		assertEquals(newLoc,c.getLocation());
+	}
+	
+	@Test
 	//Tests that getVisits() returns a 0 if passSennott() hasn't been called
 	public void TestCarVisits0() {
 		Location mockLocation = Mockito.mock(Location.class);
