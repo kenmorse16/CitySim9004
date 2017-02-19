@@ -6,9 +6,33 @@ public class Location {
 	
 	public Location(String n) {
 		name = n;
+		street = null;
+		avenue = null;
+	}
+	
+	public void addStreet(Street s) {
+		street = s;
+	}
+	
+	public void addAvenue(Avenue a) {
+		avenue = a;
 	}
 	
 	public String getName() {
 		return name;
+	}
+	
+	public Location moveStreet() {
+		if(street == null) {
+			return null;
+		}
+		return street.move(this);
+	}
+	
+	public Location moveAvenue() {
+		if(avenue == null) {
+			return null;
+		}
+		return avenue.move(this);
 	}
 }
