@@ -10,7 +10,7 @@ public class TestRunner {
 	boolean anyFailures = false;
 
 	// ADD ANY MORE CLASSES YOU WISH TO TEST HERE
-	classesToTest.add(CityTest.class);
+	classesToTest.add(CarTest.class);
 	
 	// For all test classes added, loop through and use JUnit
 	// to run them.
