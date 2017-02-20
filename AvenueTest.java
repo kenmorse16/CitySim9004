@@ -34,4 +34,15 @@ public class AvenueTest {
 		Avenue avenue = new Avenue(oldLoc, newLoc, outside);
 		assertEquals(null, avenue.move(outside));
 	}
+	
+	@Test
+	//Tests that getLocations returns the correct 
+	public void TestGetLocations() {
+		Location oldLoc = Mockito.mock(Location.class);
+		Location newLoc = Mockito.mock(Location.class);
+		Location outside = Mockito.mock(Location.class);
+		Avenue avenue = new Avenue(oldLoc, newLoc, outside);
+		Location[] testArr = {oldLoc, newLoc, outside};
+		assertArrayEquals(testArr, avenue.getLocations());
+	}
 }

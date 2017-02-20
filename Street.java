@@ -8,7 +8,6 @@ public class Street{
 		location2 = loc2;
 	}
 
-
 	public Location move(Location old) {
 		if(old.equals(location1)) {
 			return location2;
@@ -17,5 +16,10 @@ public class Street{
 			return location1;
 		}
 		return null;
+	}
+	
+	public Location[] getLocations() {
+		Location[] locs = {location1, location2};
+		return locs;
 	}
 }

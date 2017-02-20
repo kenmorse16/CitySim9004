@@ -31,4 +31,14 @@ public class StreetTest {
 		Street street = new Street(oldLoc, newLoc);
 		assertEquals(null, street.move(thirdLoc));
 	}
+	
+	@Test
+	//Tests that getLocations returns the correct Locations
+	public void TestGetLocations() {
+		Location oldLoc = Mockito.mock(Location.class);
+		Location newLoc = Mockito.mock(Location.class);
+		Street street = new Street(oldLoc, newLoc);
+		Location[] testArr = {oldLoc, newLoc};
+		assertArrayEquals(testArr, street.getLocations());
+	}
 }

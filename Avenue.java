@@ -19,4 +19,9 @@ public class Avenue {
 		}
 		return null;
 	}
+	
+	public Location[] getLocations() {
+		Location[] locs = {location1, location2, outside};
+		return locs;
+	}
 }
