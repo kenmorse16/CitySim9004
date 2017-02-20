@@ -47,4 +47,28 @@ public class CitySim9004Test {
 		assertTrue(c.connectAvenue(mockA, mock1, mock2));
 	}
 	
+	@Test
+	//Test the 0 option for specialMessage
+	public void TestSpecialMessage0() {
+		CitySim9004 c = new CitySim9004(0);
+		String zeroMessage = "That student missed out!\n";
+		assertEquals(zeroMessage, c.specialMessage(0));
+	}
+	
+	@Test
+	//Test the >= 3 option for special Message
+	public void TestSpecialMessge10() {
+		CitySim9004 c = new CitySim9004(0);
+		String lotMessage = "That driver needed lots of CS help!\n";
+		assertEquals(lotMessage, c.specialMessage(10));
+	}
+	
+	@Test
+	//Test the normal option for special Message
+	public void TestNoMessage() {
+		CitySim9004 c = new CitySim9004(0);
+		String noMessage = "";
+		assertEquals(noMessage, c.specialMessage(1));
+	}
+	
 }
