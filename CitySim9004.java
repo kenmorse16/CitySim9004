@@ -47,7 +47,18 @@ public class CitySim9004 {
 		}
 	}
 	public static void main(String[] args) {
-		long seed = Long.parseLong(args[0]);
+		if(args.length != 1) {
+			System.out.println("Invalid # of arguments");
+			System.exit(0);
+		}
+		long seed = 0;
+		try {
+			seed = Long.parseLong(args[0]);
+		}
+		catch(NumberFormatException e) {
+			System.out.println("Invalid argument type");
+			System.exit(0);
+		}
 		
 		CitySim9004 c = new CitySim9004(seed);
 		

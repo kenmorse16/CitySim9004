@@ -70,5 +70,4 @@ public class CitySim9004Test {
 		String noMessage = "";
 		assertEquals(noMessage, c.specialMessage(1));
 	}
-	
 }
