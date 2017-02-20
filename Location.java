@@ -14,8 +14,16 @@ public class Location {
 		street = s;
 	}
 	
+	public Street getStreet() {
+		return street;
+	}
+	
 	public void addAvenue(Avenue a) {
 		avenue = a;
+	}
+	
+	public Avenue getAvenue() {
+		return avenue;
 	}
 	
 	public String getName() {

@@ -13,6 +13,22 @@ public class LocationTest {
 	}
 	
 	@Test
+	//Tests that getStreet() returns nothing if addStreet() isn't called
+	public void TestGetStreetNull() {
+		Location newLoc = new Location("Name");
+		assertEquals(null, newLoc.getStreet());
+	}
+	
+	@Test
+	//Tests that getStreet() returns the Street added by addStreet()
+	public void TestAddStreet() {
+		Location newLoc = new Location("Name");
+		Street mockS = Mockito.mock(Street.class);
+		newLoc.addStreet(mockS);
+		assertEquals(mockS, newLoc.getStreet());
+	}
+	
+	@Test
 	//Tests that moveStreet() returns a Location
 	public void TestMoveStreet() {
 		Location oldLoc = new Location("Name");
@@ -28,6 +44,22 @@ public class LocationTest {
 	public void TestNullStreet() {
 		Location oldLoc = new Location("Name");
 		assertEquals(null, oldLoc.moveStreet());
+	}
+	
+	@Test
+	//Tests that getAvenue() returns nothing if addAvenue() isn't called
+	public void TestGetAvenueNull() {
+		Location newLoc = new Location("Name");
+		assertEquals(null, newLoc.getAvenue());
+	}
+	
+	@Test
+	//Tests that getAvenue() returns the Street added by addAvenue()
+	public void TestAddAvenue() {
+		Location newLoc = new Location("Name");
+		Avenue mockA = Mockito.mock(Avenue.class);
+		newLoc.addAvenue(mockA);
+		assertEquals(mockA, newLoc.getAvenue());
 	}
 	
 	@Test
