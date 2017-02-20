@@ -10,7 +10,7 @@ public class StreetTest {
 	public void TestMove() {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
-		Street street = new Street(oldLoc, newLoc);
+		Street street = new Street("Name", oldLoc, newLoc);
 		assertEquals(newLoc, street.move(oldLoc));
 	}
 	
@@ -18,7 +18,7 @@ public class StreetTest {
 	public void TestDoubleMove() {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
-		Street street = new Street(oldLoc, newLoc);
+		Street street = new Street("Name", oldLoc, newLoc);
 		assertEquals(oldLoc, street.move(street.move(oldLoc)));
 	}
 	
@@ -28,7 +28,7 @@ public class StreetTest {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
 		Location thirdLoc = Mockito.mock(Location.class);
-		Street street = new Street(oldLoc, newLoc);
+		Street street = new Street("Name", oldLoc, newLoc);
 		assertEquals(null, street.move(thirdLoc));
 	}
 	
@@ -37,8 +37,17 @@ public class StreetTest {
 	public void TestGetLocations() {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
-		Street street = new Street(oldLoc, newLoc);
+		Street street = new Street("Name", oldLoc, newLoc);
 		Location[] testArr = {oldLoc, newLoc};
 		assertArrayEquals(testArr, street.getLocations());
+	}
+	
+	@Test
+	//Tests that getName() gives the Street's name
+	public void TestGetName() {
+		Location oldLoc = Mockito.mock(Location.class);
+		Location newLoc = Mockito.mock(Location.class);
+		Street street = new Street("Name", oldLoc, newLoc);
+		assertEquals("Name", street.getName());
 	}
 }

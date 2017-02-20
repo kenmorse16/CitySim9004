@@ -11,7 +11,7 @@ public class AvenueTest {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
 		Location outside = Mockito.mock(Location.class);
-		Avenue avenue = new Avenue(oldLoc, newLoc, outside);
+		Avenue avenue = new Avenue("Name", oldLoc, newLoc, outside);
 		assertEquals(newLoc, avenue.move(oldLoc));
 	}
 	
@@ -21,7 +21,7 @@ public class AvenueTest {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
 		Location outside = Mockito.mock(Location.class);
-		Avenue avenue = new Avenue(oldLoc, newLoc, outside);
+		Avenue avenue = new Avenue("Name", oldLoc, newLoc, outside);
 		assertEquals(outside, avenue.move(avenue.move(oldLoc)));
 	}
 	
@@ -31,7 +31,7 @@ public class AvenueTest {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
 		Location outside = Mockito.mock(Location.class);
-		Avenue avenue = new Avenue(oldLoc, newLoc, outside);
+		Avenue avenue = new Avenue("Name", oldLoc, newLoc, outside);
 		assertEquals(null, avenue.move(outside));
 	}
 	
@@ -41,8 +41,18 @@ public class AvenueTest {
 		Location oldLoc = Mockito.mock(Location.class);
 		Location newLoc = Mockito.mock(Location.class);
 		Location outside = Mockito.mock(Location.class);
-		Avenue avenue = new Avenue(oldLoc, newLoc, outside);
+		Avenue avenue = new Avenue("Name", oldLoc, newLoc, outside);
 		Location[] testArr = {oldLoc, newLoc, outside};
 		assertArrayEquals(testArr, avenue.getLocations());
+	}
+	
+	@Test
+	//Test that getName() give the Avenue name
+	public void TestGetName() {
+		Location oldLoc = Mockito.mock(Location.class);
+		Location newLoc = Mockito.mock(Location.class);
+		Location outside = Mockito.mock(Location.class);
+		Avenue avenue = new Avenue("Name", oldLoc, newLoc, outside);
+		assertEquals("Name", avenue.getName());
 	}
 }

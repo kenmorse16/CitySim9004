@@ -1,9 +1,11 @@
 public class Street{
 
+	String name;
 	Location location1;
 	Location location2;
 
-	public Street(Location loc1, Location loc2) {
+	public Street(String n, Location loc1, Location loc2) {
+		name = n;
 		location1 = loc1;
 		location2 = loc2;
 	}
@@ -21,5 +23,9 @@ public class Street{
 	public Location[] getLocations() {
 		Location[] locs = {location1, location2};
 		return locs;
+	}
+	
+	public String getName() {
+		return name;
 	}
 }
